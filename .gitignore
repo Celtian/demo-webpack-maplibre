@@ -1,0 +1,20 @@
+# Compiled output
+/dist
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/snipets.code-snippets
+.history/*
+
+# System files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,21 @@
+{
+  "parser": "@babel/eslint-parser",
+  "plugins": ["@html-eslint"],
+  "ignorePatterns": ["webpack.config.js", "webpack.config.prod.js"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parser": "@typescript-eslint/parser",
+      "extends": [
+        "plugin:@typescript-eslint/recommended"
+      ],
+      "rules": {}
+    },
+    {
+      "files": ["*.html"],
+      "parser": "@html-eslint/parser",
+      "extends": ["plugin:@html-eslint/recommended"],
+      "rules": {}
+    }
+  ]
+}
