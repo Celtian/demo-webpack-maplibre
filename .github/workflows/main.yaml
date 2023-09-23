@@ -47,7 +47,7 @@ jobs:
         run: yarn lint
 
       - name: Build demo app
-        run: yarn build --base-href https://celtian.github.io/demo-webpack-maplibre/
+        run: yarn build
 
       - name: Copy index.html to 404.html
         run: cp ./dist/index.html ./dist/404.html
