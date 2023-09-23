@@ -11,7 +11,7 @@ readFile(filePath, 'utf8', (err, data) => {
     return;
   }
 
-  const modifiedHTML = data.replace(/<base href=".*" \/>/, `<base href="${baseHref}" />`);
+  const modifiedHTML = data.replace(/<base href=".*"s*\/?>/, `<base href="${baseHref}">`);
 
   writeFile(filePath, modifiedHTML, 'utf8', (err) => {
     if (err) {
