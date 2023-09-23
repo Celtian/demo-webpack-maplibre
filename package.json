@@ -17,7 +17,8 @@
     "prebuild": "rimraf dist",
     "build": "webpack --config webpack.config.prod.js",
     "postbuild": "copyfiles --up 1 ./src/**/*.{html,css} ./dist",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "preinstall": "npx only-allow yarn"
   },
   "devDependencies": {
     "@babel/core": "^7.22.20",

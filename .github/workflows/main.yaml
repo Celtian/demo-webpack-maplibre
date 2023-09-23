@@ -1,0 +1,60 @@
+name: Build & Publish
+
+# on:
+#   push:
+#     tags:
+#       - 'v*'
+
+on:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  install-and-build:
+    name: 🛠️ Install, Build & Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup node version
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Cache node modules
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.OS }}-yarn-${{ env.cache-name }}-
+            ${{ runner.OS }}-yarn-
+            ${{ runner.OS }}-
+
+      - name: Install
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: yarn install --frozen-lockfile
+
+      - name: Postinstall
+        if: steps.cache.outputs.cache-hit == 'true'
+        run: yarn postinstall
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Build demo app
+        run: yarn build --base-href https://celtian.github.io/demo-webpack-maplibre/
+
+      - name: Copy index.html to 404.html
+        run: cp ./dist/index.html ./dist/404.html
+
+      - name: Deploy Github Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_branch: gh-pages
+          publish_dir: ./dist
