@@ -13,7 +13,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server",
+    "lint": "eslint",
+    "prebuild": "rimraf dist",
     "build": "webpack --config webpack.config.prod.js",
+    "postbuild": "copyfiles --up 1 ./src/**/*.{html,css} ./dist",
     "prepare": "husky install"
   },
   "devDependencies": {
@@ -26,11 +29,13 @@
     "@typescript-eslint/eslint-plugin": "^6.7.2",
     "@typescript-eslint/parser": "^6.7.2",
     "clean-webpack-plugin": "^4.0.0",
+    "copyfiles": "^2.4.1",
     "eslint": "^8.50.0",
     "eslint-webpack-plugin": "^4.0.1",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
     "prettier": "^3.0.3",
+    "rimraf": "^5.0.1",
     "ts-loader": "^9.4.4",
     "typescript": "^5.2.2",
     "webpack": "^5.88.2",
