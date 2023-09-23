@@ -39,10 +39,6 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
 
-      - name: Postinstall
-        if: steps.cache.outputs.cache-hit == 'true'
-        run: yarn postinstall
-
       - name: Lint
         run: yarn lint
 
