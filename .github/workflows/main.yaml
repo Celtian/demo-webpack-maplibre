@@ -52,6 +52,9 @@ jobs:
       - name: Copy index.html to 404.html
         run: cp ./dist/index.html ./dist/404.html
 
+      - name: Change base href
+        run: yarn script:base-href https://celtian.github.io/demo-webpack-maplibre/
+
       - name: Deploy Github Pages
         uses: peaceiris/actions-gh-pages@v3
         with:

@@ -18,7 +18,9 @@
     "build": "webpack --config webpack.config.prod.js",
     "postbuild": "copyfiles --up 1 ./src/**/*.{html,css} ./dist",
     "prepare": "husky install",
-    "preinstall": "npx only-allow yarn"
+    "preinstall": "npx only-allow yarn",
+    "script": "cd build-scripts && npx ts-node -P tsconfig.ts-node.json --",
+    "script:base-href": "npm run script base-href"
   },
   "devDependencies": {
     "@babel/core": "^7.22.20",
@@ -27,12 +29,14 @@
     "@commitlint/config-conventional": "^17.7.0",
     "@html-eslint/eslint-plugin": "^0.19.1",
     "@html-eslint/parser": "^0.19.1",
+    "@types/fs-extra": "^11.0.2",
     "@typescript-eslint/eslint-plugin": "^6.7.2",
     "@typescript-eslint/parser": "^6.7.2",
     "clean-webpack-plugin": "^4.0.0",
     "copyfiles": "^2.4.1",
     "eslint": "^8.50.0",
     "eslint-webpack-plugin": "^4.0.1",
+    "fs-extra": "^11.1.1",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
     "prettier": "^3.0.3",
