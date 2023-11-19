@@ -16,15 +16,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: 🗜️ Checkout
         uses: actions/checkout@v3
 
-      - name: Setup node version
+      - name: 🗜️ Setup node version
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
 
-      - name: Cache node modules
+      - name: 🛠️ Cache node modules
         id: cache
         uses: actions/cache@v3
         with:
@@ -35,23 +35,23 @@ jobs:
             ${{ runner.OS }}-yarn-
             ${{ runner.OS }}-
 
-      - name: Install
+      - name: 🛠️ Install
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
 
-      - name: Lint
+      - name: 🌡️ Lint
         run: yarn lint
 
-      - name: Build demo app
+      - name: 📦 Build demo app
         run: yarn build
 
-      - name: Copy index.html to 404.html
+      - name: 🛠️ Copy index.html to 404.html
         run: cp ./dist/index.html ./dist/404.html
 
-      - name: Change base href
+      - name: 🛠️ Change base href
         run: yarn script:base-href https://celtian.github.io/demo-webpack-maplibre/
 
-      - name: Deploy Github Pages
+      - name: 🚀 Deploy Github Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
