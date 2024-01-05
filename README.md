@@ -18,6 +18,8 @@ _Consider to use `WSL` if you are developing on `Windows` to prevent unsupported
 yarn start
 ```
 
+_Go to `http://localhost:8080/`_
+
 ## Build
 
 ```
