@@ -17,41 +17,41 @@
     "prebuild": "rimraf dist",
     "build": "webpack --config webpack.config.prod.js",
     "postbuild": "copyfiles --up 1 ./src/**/*.{html,css} ./dist",
-    "prepare": "husky install",
-    "preinstall": "npx only-allow yarn",
+    "prepare": "husky",
     "script:base-href": "yarn tsx build-scripts/base-href.ts",
     "fix-vulnerabilities": "npx yarn-audit-fix && npx browserslist --update-db"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.7",
-    "@babel/eslint-parser": "^7.23.3",
-    "@commitlint/cli": "^18.4.4",
-    "@commitlint/config-conventional": "^18.4.4",
-    "@html-eslint/eslint-plugin": "^0.22.0",
-    "@html-eslint/parser": "^0.22.0",
+    "@babel/core": "^7.24.3",
+    "@babel/eslint-parser": "^7.24.1",
+    "@commitlint/cli": "^19.2.1",
+    "@commitlint/config-conventional": "^19.1.0",
+    "@html-eslint/eslint-plugin": "^0.24.0",
+    "@html-eslint/parser": "^0.24.0",
     "@types/fs-extra": "^11.0.4",
-    "@typescript-eslint/eslint-plugin": "^6.17.0",
-    "@typescript-eslint/parser": "^6.17.0",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
     "clean-webpack-plugin": "^4.0.0",
     "copyfiles": "^2.4.1",
-    "eslint": "^8.56.0",
-    "eslint-webpack-plugin": "^4.0.1",
+    "eslint": "^8.57.0",
+    "eslint-webpack-plugin": "^4.1.0",
     "fs-extra": "^11.2.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^15.2.0",
-    "prettier": "^3.1.1",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
     "rimraf": "^5.0.5",
     "ts-loader": "^9.5.1",
-    "tsx": "^4.7.0",
-    "typescript": "^5.3.3",
-    "webpack": "^5.89.0",
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.3",
+    "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1"
+    "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
-    "maplibre-gl": "^3.6.2"
+    "maplibre-gl": "^4.1.2"
   },
   "engines": {
-    "node": ">=20 <22"
+    "node": ">=20 <22",
+    "npm": "please-use-yarn"
   }
 }
