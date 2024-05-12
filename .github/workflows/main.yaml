@@ -22,7 +22,7 @@ jobs:
       - name: 🗜️ Setup node version
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: 🛠️ Cache node modules
         id: cache
@@ -52,7 +52,7 @@ jobs:
         run: yarn script:base-href https://celtian.github.io/demo-webpack-maplibre/
 
       - name: 🚀 Deploy Github Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_branch: gh-pages
