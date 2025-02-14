@@ -1,6 +1,6 @@
 # Demo Webpack Maplibre
 
-## Instalation
+## 🛠️ Instalation
 
 Definitelly works with Node `v22.2.0` & yarn `1.22.21`
 
@@ -12,7 +12,7 @@ _Consider to install vscode with recommended extensions in `.vscode/extensions.j
 
 _Consider to use `WSL` if you are developing on `Windows` to prevent unsupported commands in `package.json`._
 
-## Development server
+## 🚀 Development server
 
 ```
 yarn start
@@ -20,19 +20,19 @@ yarn start
 
 _Go to `http://localhost:8080/`_
 
-## Build
+## 📦 Build
 
 ```
 yarn build
 ```
 
-## Deploy
+## 🚀 Deploy
 
 only via Github Pipelines
 
-## License
+## 🪪 License
 
-Copyright &copy; 2023 - 2024 [Dominik Hladik](https://github.com/Celtian)
+Copyright &copy; 2023 - 2025 [Dominik Hladik](https://github.com/Celtian)
 
 All contents are licensed under the [MIT license].
 
