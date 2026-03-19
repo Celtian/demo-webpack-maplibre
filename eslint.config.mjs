@@ -32,7 +32,7 @@ export default [
       parser: htmlParser,
     },
     plugins: {
-      '@html-eslint': htmlEslint,
+      html: htmlEslint,
     },
     rules: {
       ...htmlEslint.configs.recommended.rules,
